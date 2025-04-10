@@ -1,0 +1,580 @@
+//=====================================
+//这里存放重置版的英雄身心   #80701——               预留至#81000
+
+//李白（灰烬之灵）
+
+//  #80701       李白：精通的反击螺旋             "axe_jingtongdefanji"
+//  #80702       狙击手：快速装填                    "sniper_miaozhun" 
+//  #80703       瘟疫法师：精通的竭心光环       "necrolyte_heartstopper_aura_fun"
+//  #80704       敌法师：精通的法术反制          "antimage_mana_defend"
+//  #80705       马格纳斯：精通的颠勺             "magnataur_dianshao"
+//  #80706       末日使者：精通的阎刃             "doom_bringer_yanren"
+//  #80707       幻影刺客：永恒的恩赐解脱       "永恒的恩赐解脱"
+//  #80708       齐天大圣：毁天灭地                "monkey_king_huitianmiedi"
+//  #80709       半人马战行者：战争践踏          "centaur_zhanzhengjianta"
+//  #80710       远古冰魄：寒霜诅咒                "ancient_apparition_hanshuangzuzhou"
+
+"DOTAAbilities"
+{      
+
+	"ember_spirit_flame_charge"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"wisp/wisp_tether_alt"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCooldown"	"20 16 12 8"
+		"AbilityManaCost"	"100 110 120 130"
+		"ID"	"80701"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_fun.vpcf"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_flame_charge.lua"
+				"Function"	"ember_spirit_flame_charge"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_flame_charge.lua"
+				"Function"	"ember_spirit_flame_charge_OnUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ember_spirit_flame_charge"
+			{
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_flame_charge.lua"
+						"Function"	"modifier_ember_spirit_flame_charge_OnDestroy"
+					}
+				}
+				"IsPurgable"	"0"
+			}
+			"modifier_ember_spirit_flame_charge_noadd"
+			{
+				"IsHidden"	"1"
+			}
+			"modifier_ember_spirit_flame_charge_pf"
+			{
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"Function"	"modifier_ember_spirit_sword_soul_pf"
+						"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_flame_charge.lua"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"Function"	"modifier_ember_spirit_sword_soul_pf_OnDeath"
+						"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_flame_charge.lua"
+					}
+				}
+				"IsHidden"	"1"
+			}
+			"modifier_ember_spirit_flame_charge_nobar"
+			{
+				"States"
+				{
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"IsHidden"	"1"
+			}
+		}
+		"AbilityValues"
+		{
+			"flame_charge_damage"
+			{
+				"value"	"70 140 210 280"
+				"special_bonus_unique_flame_charge_damage"	"+100"
+			}
+			"radius"	"170"
+			"min_travel_distance"	"200"
+			"max_travel_distance"
+			{
+				"value"	"650"
+				"special_bonus_unique_flame_charge_travel_distance"	"+350"
+			}
+			"interval"
+			{
+				"value"	"5"
+				"special_bonus_unique_flame_charge_interval"	"+2"
+			}
+			"stun"	"0.5"
+		}
+	}
+
+	"ember_spirit_flame_charge_two"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"wisp_tether"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"ID"	"80702"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_flame_charge.lua"
+				"Function"	"ember_spirit_flame_charge_two"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ember_spirit_flame_charge_two"
+			{
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_flame_charge.lua"
+						"Function"	"modifier_ember_spirit_flame_charge_two_OnDestroy"
+					}
+				}
+				"IsBuff"	"1"
+				"IsPurgable"	"0"
+			}
+		}
+		"AbilityValues"
+		{
+			"flame_charge_damage"
+			{
+				"value"	"70 140 210 280"
+				"special_bonus_unique_flame_charge_damage"	"+100"
+			}
+			"radius"	"170"
+			"min_travel_distance"	"200"
+			"max_travel_distance"
+			{
+				"value"	"650"
+				"special_bonus_unique_flame_charge_travel_distance"	"+350"
+			}
+			"interval"
+			{
+				"value"	"5"
+				"special_bonus_unique_flame_charge_interval"	"+2"
+			}
+			"stun"	"0.5"
+		}
+	}
+
+	"ember_spirit_flame_charge_close"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"wisp_tether_break"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"ID"	"80703"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_flame_charge.lua"
+				"Function"	"ember_spirit_flame_charge_close"
+			}
+		}
+	}
+
+	"ember_spirit_flame_sword_technique"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"ember_spirit/ti9_immortal_shoulder/ember_spirit_flame_guard_immortal"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"	"1"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityCastPoint"	"0.1"
+		// Time
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"	"18 16 14 12"
+		"AbilityManaCost"	"70 80 90 100"
+		"ID"	"80704"
+		// Data driven
+		// -------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_disruptor/disruptor_kineticfield_formation.vpcf"
+			"particle"	"particles/units/heroes/hero_disruptor/disruptor_kineticfield.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_flame_sword_technique.lua"
+				"Function"	"ember_spirit_flame_sword_technique"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ember_spirit_flame_sword_technique"
+			{
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"IsHidden"	"1"
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"flame_sword_technique_damage"
+			{
+				"value"	"100 200 300 400"
+				"special_bonus_unique_flame_sword_technique_damage"	"+80"
+			}
+			"radius"	"500"
+		}
+	}
+
+	"ember_spirit_hot_sword_soul"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"ember_spirit_fire_remnant"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityCastPoint"	"0.0"
+		// Time
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"	"0.0"
+		"ID"	"80705"
+		"Modifiers"
+		{
+			"modifier_ember_spirit_hot_sword_soul"
+			{
+				"Passive"	"1"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_hot_sword_soul.lua"
+						"Function"	"ember_spirit_hot_sword_soul"
+					}
+				}
+				"IsHidden"	"1"
+			}
+			"modifier_ember_spirit_hot_sword_soul_count"
+			{
+				"IsBuff"	"1"
+				"IsPurgable"	"1"
+			}
+			"modifier_ember_spirit_hot_sword_soul_unlocking"
+			{
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_hot_sword_soul.lua"
+						"Function"	"modifier_ember_spirit_hot_sword_soul_unlocking"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_hot_sword_soul.lua"
+						"Function"	"modifier_ember_spirit_hot_sword_soul_locking"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%bouns_attack"
+				}
+				"IsBuff"	"1"
+				"IsPurgable"	"1"
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"unlocking_number"
+			{
+				"value"	"6"
+				"special_bonus_unique_hot_sword_soul_unlocking_number"	"-2"
+			}
+			"radius"	"500"
+			"interval"
+			{
+				"value"	"5"
+				"special_bonus_unique_flame_charge_interval"	"+2"
+			}
+			"bouns_attack"	"10 20 30 40"
+		}
+	}
+
+	"ember_spirit_sword_soul"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"ember_spirit_activate_fire_remnant"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCastPoint"	"0.1"
+		"AbilityManaCost"	"120 220 320"
+		"ID"	"80706"
+		"precache"
+		{
+			"particle"	"particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_fun.vpcf"
+			"particle"	"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_aura_ring_edge_fun.vpcf"
+			"particle"	"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_aura_fun.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
+			"particle"	"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/phantom_assassin_crit_arcana_swoop_r.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_sword_soul.lua"
+				"Function"	"ember_spirit_sword_soul"
+				"Target"	"CASTER"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"Function"	"ember_spirit_sword_soul_OnUpgrade"
+				"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_sword_soul.lua"
+			}
+		}
+		"OnProjectileFinish"
+		{
+			"RunScript"
+			{
+				"Function"	"ember_spirit_sword_soul_OnProjectileHit_finish"
+				"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_sword_soul.lua"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+		}
+		"Modifiers"
+		{
+			"modifier_ember_spirit_sword_soul"	{}
+			"modifier_ember_spirit_sword_soul_nobar"
+			{
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"IsHidden"	"1"
+			}
+			"modifier_ember_spirit_sword_soul_time"
+			{
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"IsHidden"	"0"
+				"IsBuff"	"1"
+			}
+			"modifier_ember_spirit_sword_soul_pf"
+			{
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_sword_soul.lua"
+						"Function"	"modifier_ember_spirit_sword_soul_pf"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"Function"	"modifier_ember_spirit_sword_soul_pf_OnDeath"
+						"ScriptFile"	"scripts/vscripts/fun_heroes/hero_ember_spirit/ember_spirit_sword_soul.lua"
+					}
+				}
+				"IsHidden"	"1"
+			}
+		}
+		"HasScepterUpgrade"	"1"
+		"HasShardUpgrade"	"1"
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"	"28 20 12"
+				"special_bonus_shard"	"-8"
+			}
+			"sword_soul_damage"
+			{
+				"value"	"150 300 450"
+				"special_bonus_shard"	"+100"
+				"special_bonus_unique_ember_spirit_sword_soul_damage"	"+550"
+			}
+			"percent_damage_per"
+			{
+				"value"	"15"
+				"special_bonus_unique_ember_spirit_sword_soul_percent_damage_per"	"+20"
+			}
+			"scepter_pgrade"
+			{
+				"value"	"0"
+				"special_bonus_scepter"	"+1"
+			}
+			"max_percent_damage_per_tooltip"	"330"
+			"max_percent_damage_per"	"3.3"
+		}
+	}
+
+//李白天赋↓↓
+	"special_bonus_unique_ember_spirit_sword_soul_damage"	
+	{
+
+		//剑圣-------------------------------------------------------------------------------------------------------------
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"80707"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"special_bonus_base"
+
+		
+
+	}
+
+	"special_bonus_unique_ember_spirit_sword_soul_percent_damage_per"
+	{
+
+		//剑圣-------------------------------------------------------------------------------------------------------------
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"80708"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"special_bonus_base"
+
+		
+
+	}
+	"special_bonus_unique_flame_sword_technique_damage"
+	{
+
+		//剑圣-------------------------------------------------------------------------------------------------------------
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"80709"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"special_bonus_base"
+
+		
+
+	}
+	"special_bonus_unique_flame_charge_damage"	
+	{
+
+		//剑圣-------------------------------------------------------------------------------------------------------------
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"80710"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"special_bonus_base"
+
+		
+
+	}
+	"special_bonus_unique_flame_charge_travel_distance"	
+	{
+
+		//剑圣-------------------------------------------------------------------------------------------------------------
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"80711"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"special_bonus_base"
+
+		
+
+	}
+
+	"special_bonus_unique_flame_charge_interval"	
+	{
+
+		//剑圣-------------------------------------------------------------------------------------------------------------
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"80712"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"special_bonus_base"
+
+		
+
+	}
+
+
+	"special_bonus_unique_hot_sword_soul_unlocking_number"	
+	{
+
+		//剑圣-------------------------------------------------------------------------------------------------------------
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"80713"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"special_bonus_base"
+
+		
+
+	}
+
+
+//李白天赋↑↑
+}
