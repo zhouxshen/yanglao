@@ -6,7 +6,15 @@ blessing_table = {
     {   modifier = "modifier_hero_blessing_fun_all attributes",                name_cn = "+18全属性"          },
 	--2
 	-- {   modifier = "modifier_hero_blessing_bonus_gold",                        name_cn = "+500金钱"          },
-	-- {   modifier = "modifier_hero_blessing_bonus_status_resistance",           name_cn = "+100%状态抗性"      },
+	-- {   modifier = "modifier_hero_blessing_bonus_status_resistance_z",           name_cn = "+100%状态抗性"      },
+	{   modifier = "modifier_hero_blessing_bonus_attackspeed_constant",        name_cn = "+80攻击速度"      },
+	{   modifier = "modifier_hero_blessing_bonus_attack_range",           	   name_cn = "+120攻击距离"      },
+	{   modifier = "modifier_hero_blessing_bonus_attack_combine",              name_cn = "绝世武神"      },
+	{   modifier = "modifier_hero_blessing_bonus_magic_combine",               name_cn = "有法可依"      },
+	{   modifier = "modifier_hero_blessing_bonus_meat_shield_combine",         name_cn = "一夫当关"      },
+	{   modifier = "modifier_hero_blessing_bonus_base_combine",                name_cn = "万丈高楼"      },
+	{   modifier = "modifier_hero_blessing_bonus_base_combine",                name_cn = "时光尽头"      },
+	-- {   modifier = "modifier_hero_blessing_bonus_cast_range",                  name_cn = "+280施法距离"      },
 	--3
 	{   modifier = "modifier_hero_blessing_bonus_respawn",                     name_cn = "-100秒复活时间"      },
 	--4
@@ -28,7 +36,7 @@ blessing_table = {
 	--12
 	{   modifier = "modifier_hero_blessing_bonus_incoming_damage_percent",     name_cn = "-30%受到的伤害"     },
     --13
-	{   modifier = "modifier_hero_blessing_bonus_vision",                      name_cn = "+100%状态抗性"      },
+	-- {   modifier = "modifier_hero_blessing_bonus_vision",                      name_cn = "+100%状态抗性"      },
 	--14
 	{   modifier = "modifier_hero_blessing_bonus_health_regen",                name_cn = "+35生命恢复"      },
 	--15

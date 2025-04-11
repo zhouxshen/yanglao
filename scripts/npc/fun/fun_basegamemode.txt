@@ -266,14 +266,15 @@
 				}
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			}
-			"modifier_hero_blessing_bonus_status_resistance"
+			"modifier_hero_blessing_bonus_status_resistance_z"
 			{
-				"TextureName"    "frostivus2018_decorate_tree"
+				"TextureName"	"frostivus2018_decorate_tree"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_STATUS_RESISTANCE"    "%bonus_status_resistance"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"     "90"
+					"MODIFIER_PROPERTY_STATUS_RESISTANCE"     "100"
 				}
-				"Attributes"    "MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Attributes" "MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			}
 			"modifier_hero_blessing_bonus_gold"
 			{
@@ -356,6 +357,33 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%bonus_spell_amplify_percent"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_hero_blessing_bonus_attackspeed_constant"
+			{
+				"TextureName"	"frostivus2018_decorate_tree"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attackspeed_constant"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_hero_blessing_bonus_attack_range"
+			{
+				"TextureName"	"frostivus2018_decorate_tree"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_attack_range"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_hero_blessing_bonus_cast_range"
+			{
+				"TextureName"	"frostivus2018_decorate_tree"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_CAST_RANGE_BONUS"	"%bonus_cast_range"
 				}
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			}
@@ -443,6 +471,9 @@
 				"value" "35"
 			}
 			"bonus_spell_amplify_percent"	                "25"
+			"bonus_attackspeed_constant"                "80"
+			"bonus_attack_range"                        "120"
+			"bonus_cast_range"                          "280"
 			"bonus_cooldown_percent"	                "25"
 			"bonus_incoming_spell_percent"	"55"
 			"bonus_armor"	                                "24"
