@@ -308,6 +308,72 @@
 				}
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			}
+
+
+
+
+			"modifier_hero_blessing_bonus_attack_combine"
+			{
+				"TextureName"	"frostivus2018_decorate_tree"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"20"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"25"
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"50"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+
+			"modifier_hero_blessing_bonus_magic_combine"
+			{
+				"TextureName"	"frostivus2018_decorate_tree"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANACOST_PERCENTAGE"	   "10"
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"8"
+					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"	"8"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+
+			"modifier_hero_blessing_bonus_meat_shield_combine"
+			{
+				"TextureName"	"frostivus2018_decorate_tree"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"8"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"20"
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-12"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_hero_blessing_bonus_base_combine"
+			{
+				"TextureName"	"frostivus2018_decorate_tree"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"6"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"6"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"6"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"30"
+					"MODIFIER_PROPERTY_RESPAWNTIME"	"-35"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+
+			"modifier_hero_blessing_bonus_attr_combine"
+			{
+				"TextureName"	"frostivus2018_decorate_tree"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"12"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"5"
+					"MODIFIER_PROPERTY_RESPAWNTIME"	"-35"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+
+
 			"modifier_hero_blessing_bonus_damage"
 			{
 				"TextureName"	"frostivus2018_decorate_tree"
@@ -475,7 +541,7 @@
 			"bonus_attack_range"                        "120"
 			"bonus_cast_range"                          "280"
 			"bonus_cooldown_percent"	                "25"
-			"bonus_incoming_spell_percent"	"55"
+			"bonus_incoming_spell_percent"	"60"
 			"bonus_armor"	                                "24"
 			"bonus_incoming_damage_percent"	"-30"
 			"bonus_day_vision"	                                "100"

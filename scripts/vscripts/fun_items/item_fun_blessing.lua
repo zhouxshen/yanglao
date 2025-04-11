@@ -9,11 +9,15 @@ blessing_table = {
 	-- {   modifier = "modifier_hero_blessing_bonus_status_resistance_z",           name_cn = "+100%状态抗性"      },
 	{   modifier = "modifier_hero_blessing_bonus_attackspeed_constant",        name_cn = "+80攻击速度"      },
 	{   modifier = "modifier_hero_blessing_bonus_attack_range",           	   name_cn = "+120攻击距离"      },
+
+
 	{   modifier = "modifier_hero_blessing_bonus_attack_combine",              name_cn = "绝世武神"      },
 	{   modifier = "modifier_hero_blessing_bonus_magic_combine",               name_cn = "有法可依"      },
 	{   modifier = "modifier_hero_blessing_bonus_meat_shield_combine",         name_cn = "一夫当关"      },
 	{   modifier = "modifier_hero_blessing_bonus_base_combine",                name_cn = "万丈高楼"      },
-	{   modifier = "modifier_hero_blessing_bonus_base_combine",                name_cn = "时光尽头"      },
+	{   modifier = "modifier_hero_blessing_bonus_attr_combine",                name_cn = "时光尽头"      },
+
+
 	-- {   modifier = "modifier_hero_blessing_bonus_cast_range",                  name_cn = "+280施法距离"      },
 	--3
 	{   modifier = "modifier_hero_blessing_bonus_respawn",                     name_cn = "-100秒复活时间"      },
